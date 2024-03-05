@@ -1,0 +1,37 @@
+<div class="list row">
+  <div class="col-md-8">
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="Search by make" [(ngModel)]="make" />
+      <div class="input-group-append">
+        <button class="btn btn-primary" type="button" (click)="searchByMake()">
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <h4>Cars List</h4>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let car of cars; let i = index" [class.active]="i === currentIndex"
+        (click)="searchByMake()">
+        <div class="d-flex justify-content-between align-items-center" style="width: 400px;">
+          <span>{{ car.make }}</span>
+          <span>{{ car.model }}</span>
+          <span>{{ car.productionYear }}</span>
+          <span>{{ car.status }}</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- <button class="m-3 btn btn-sm btn-danger" (click)="removeAllTutorials()">
+        Remove All
+      </button>
+    </div>
+    <div class="col-md-6">
+      <app-tutorial-details
+        [viewMode]="true"
+        [currentTutorial]="currentTutorial"
+      ></app-tutorial-details>
+    </div> -->
