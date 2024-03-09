@@ -1,0 +1,28 @@
+<!-- create-update-car.component.html -->
+<div class="modal-header">
+    <h4 class="modal-title">Edit Car Details</h4>
+    <button type="button" class="close" aria-label="Close" (click)="closeModal()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <dialog type="modal" id="dialog" class="drawer" #dialog>
+        <ng-content></ng-content>
+      </dialog>
+    <!-- Form to edit car details -->
+    <!-- <form>
+      <div class="form-group">
+        <label for="make">Make</label>
+        <input type="text" class="form-control" id="make" [(ngModel)]="car.make" name="make">
+      </div>
+      <div class="form-group">
+        <label for="model">Model</label>
+        <input type="text" class="form-control" id="model" [(ngModel)]="car.model" name="model">
+      </div>
+      <div class="form-group">
+        <label for="productionYear">Production Year</label>
+        <input type="text" class="form-control" id="productionYear" [(ngModel)]="car.productionYear" name="productionYear">
+      </div>
+      <button type="button" class="btn btn-primary" (click)="saveChanges()">Save Changes</button>
+    </form> -->
+  </div>

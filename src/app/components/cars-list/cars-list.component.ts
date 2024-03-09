@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CarService } from '../../services/car.service';
 import { Observable } from 'rxjs';
 import { Car } from '../../models/car.model';
+import { ModalService } from '@developer-partners/ngx-modal-dialog';
 
 @Component({
   selector: 'app-cars-list',
@@ -12,13 +13,11 @@ export class CarsListComponent implements OnInit {
 
   cars?: Car[];
   currentCar: Car = {};
-  currentIndex = -1;
   make = '';
 
 
   constructor(
-    private carService: CarService
-  ) { }
+    private carService: CarService) { }
 
   ngOnInit(): void {
     this.fetchCars();
@@ -40,7 +39,6 @@ export class CarsListComponent implements OnInit {
 
   searchByMake(): void {
     this.currentCar = {};
-    this.currentIndex = -1;
 
     this.carService.getAllCarsByMake(this.make).subscribe({
       next: (data) => {

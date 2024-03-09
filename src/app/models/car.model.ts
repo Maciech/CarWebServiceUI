@@ -5,6 +5,7 @@ export class Car {
     productionYear?: number;
     status?: string;
     destination?: string;
+    image?: Blob;
     isActive?: number;
     createdBy?: String;
     createdDate?: number;

@@ -22,7 +22,15 @@ export class CarService {
       return this.http.get<Car[]>(`${this.apiCarsServerUrl}/getAllCarsByMake/${make}`);
     }
 
+    getCarById(carId: number): Observable<Car[]> {
+      return this.http.get<Car[]>(`${this.apiCarsServerUrl}/getCar/${carId}`);
+    }
+
     addCar(car: Car): Observable<Car[]> {
       return this.http.post<Car[]>(`${this.apiCarsServerUrl}/createCar`, car);
+    }
+
+    updateCar(car: Car): Observable<Car[]> {
+      return this.http.put<Car[]>(`${this.apiCarsServerUrl}/updateCar`, car);
     }
 }

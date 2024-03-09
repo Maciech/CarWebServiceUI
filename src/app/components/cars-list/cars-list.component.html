@@ -12,8 +12,7 @@
   <div class="col-md-6">
     <h4>Cars List</h4>
     <ul class="list-group">
-      <li class="list-group-item" *ngFor="let car of cars; let i = index" [class.active]="i === currentIndex"
-        (click)="searchByMake()">
+      <li class="list-group-item" *ngFor="let car of cars" (click)="searchByMake()">
         <div class="d-flex justify-content-between align-items-center" style="width: 400px;">
           <span>{{ car.make }}</span>
           <span>{{ car.model }}</span>
