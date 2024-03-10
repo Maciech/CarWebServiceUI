@@ -1,29 +1,48 @@
-<div class="container mt-3">
+<div class="container mt-3 d-flex justify-content-center">
     <router-outlet></router-outlet>
-
     <div class="col-md-4">
         <div class="card" style="width: 500px;">
-            <div class="card-body">
-                <h5 class="card-title">Rent a car for occasion</h5>
-                <p class="card-text">Check valid calendar availability for car rent</p>
+            <div class="container d-flex align-items-center justify-content-center">
+                <div class="card-body">
+                    <h5 class="card-title">Rent a car for occasion</h5>
+                    <p class="card-text">Check valid calendar availability for car rent</p>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="col-md-6">
-    <div class="card" style="width: 1000px;">
+<div class="container mt-4 d-flex justify-content-center">
+    <div class="card" style="width: 1200px;">
         <ul class="list-group">
-            <li class="list-group-item" *ngFor="let car of cars" (click)="(searchById(car.carId!))">
-                
+            <li class="list-group-item" *ngFor="let car of cars">
                 <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-center" style="width: 400px;">
-                        <span>{{ car.make }}</span>
-                        <span>{{ car.model }}</span>
-                        <span>{{ car.productionYear }}</span>
+                    <div class="row">
+                        <div class="col-sm">
+                            <span>{{ car.make }}</span>
+                        </div>
+                        <div class="col-sm">
+                            <span>{{ car.model }}</span>
+                        </div>
+                        <div class="col-sm">
+                            <span>{{ car.productionYear }}</span>
+                        </div>
+                        <div class="col-sm">
+                            <span>{{ car.status }}</span>
+                        </div>
+                        <div class="col-sm">
+                            <button class="btn btn-primary me-2" (click)="createUpdateCar(car)">
+                                <i class="bi bi-calendar-event"></i>
+                            </button>
+                            <button class="btn btn-primary" (click)="createUpdateCar(car)">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </div>
+                        <div class="col-4">
+                            <img src="assets/shared_images/f30_white.jpg" class="card-img-top" alt="Rent car image">
+                        </div>
                     </div>
                 </div>
-                <button class="btn btn-primary" (click)="createUpdateCar(car)">Edit</button>
             </li>
         </ul>
     </div>

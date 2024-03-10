@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Car } from '../models/car.model';
+import { Car } from '../../models/car-model/car.model';
 
 @Injectable({
   providedIn: 'root'
@@ -22,15 +22,15 @@ export class CarService {
       return this.http.get<Car[]>(`${this.apiCarsServerUrl}/getAllCarsByMake/${make}`);
     }
 
-    getCarById(carId: number): Observable<Car[]> {
-      return this.http.get<Car[]>(`${this.apiCarsServerUrl}/getCar/${carId}`);
+    getCarById(carId: number): Observable<Car> {
+      return this.http.get<Car>(`${this.apiCarsServerUrl}/getCar/${carId}`);
     }
 
-    addCar(car: Car): Observable<Car[]> {
-      return this.http.post<Car[]>(`${this.apiCarsServerUrl}/createCar`, car);
+    createCar(car: Car): Observable<Car> {
+      return this.http.post<Car>(`${this.apiCarsServerUrl}/createCar`, car);
     }
 
-    updateCar(car: Car): Observable<Car[]> {
-      return this.http.put<Car[]>(`${this.apiCarsServerUrl}/updateCar`, car);
+    updateCar(car: Car): Observable<Car> {
+      return this.http.put<Car>(`${this.apiCarsServerUrl}/updateCar`, car);
     }
 }

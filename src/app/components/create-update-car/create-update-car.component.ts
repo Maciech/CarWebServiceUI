@@ -1,6 +1,6 @@
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
-import { Car } from '../../models/car.model';
-import { CarService } from '../../services/car.service';
+import { Car } from '../../models/car-model/car.model';
+import { CarService } from '../../services/car-service/car.service';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators'; // Import the map operator
 
@@ -42,7 +42,7 @@ export class CreateUpdateCarComponent {
     
     this.carService.getCarById(carId).subscribe({
       next: (data) => {
-        this.cars = data;
+        this.currentCar = data;
         console.log(data);
       },
       error: (error) => {

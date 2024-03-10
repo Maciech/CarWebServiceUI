@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CarService } from '../../services/car.service';
+import { CarService } from '../../services/car-service/car.service';
 import { Observable } from 'rxjs';
-import { Car } from '../../models/car.model';
+import { Car } from '../../models/car-model/car.model';
 import { ModalService } from '@developer-partners/ngx-modal-dialog';
 
 @Component({

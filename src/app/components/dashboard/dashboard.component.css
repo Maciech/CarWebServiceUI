@@ -1,0 +1,8 @@
+.card {
+    height: 100%; /* Set height to 100% to ensure all cards have the same height */
+}
+
+.card-img-top {
+    width: 100%; /* Ensure image fills entire width of card */
+    height: auto; /* Maintain aspect ratio of image */
+}

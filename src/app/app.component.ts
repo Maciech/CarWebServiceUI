@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'CarWebServiceUI';
+
+  //Required visibility condition for logged user admin
+  isAdmin: boolean = true;
+  //This field must be changed dynamically
+  loginToogle: string = 'Login';
+
 }

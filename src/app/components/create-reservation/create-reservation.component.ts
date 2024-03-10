@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { CarsListComponent } from '../cars-list/cars-list.component';
-import { Car } from '../../models/car.model';
-import { CarService } from '../../services/car.service';
+import { Car } from '../../models/car-model/car.model';
+import { CarService } from '../../services/car-service/car.service';
 import { HttpErrorResponse } from '@angular/common/http';
 
 import { AddCarComponent } from '../add-car/add-car.component';
-import { CreateUpdateCarService } from '../../services/modals/create-update-car.service';
+import { CreateUpdateCarService } from '../../services/create-update-car-service/create-update-car.service';
 
 
 
@@ -40,10 +40,6 @@ export class CreateReservationComponent implements OnInit {
       },
       complete: () => (console.info('complete'))
     })
-  }
-
-  searchById(carId: number): void {
-    this.searchById(carId);
   }
   
   createUpdateCar(car: Car) {

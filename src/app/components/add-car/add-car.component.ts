@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Car } from '../../models/car.model';
-import { CarService } from '../../services/car.service';
+import { Car } from '../../models/car-model/car.model';
+import { CarService } from '../../services/car-service/car.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -32,7 +32,7 @@ export class AddCarComponent {
   createCar() {
     if (this.carForm.valid) {
       const formData = this.carForm.value;
-      this.carService.addCar(formData).subscribe({
+      this.carService.createCar(formData).subscribe({
         next: (response) => {
           console.log(response);
         },
