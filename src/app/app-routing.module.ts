@@ -7,9 +7,11 @@ import { CreateReservationComponent } from './components/create-reservation/crea
 import { SellCarComponent } from './components/sell-car/sell-car.component';
 import { LoginComponent } from './components/login/login.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent},
+  { path: 'admin-dashboard', component: AdminDashboardComponent},
   { path: 'cars', component: CarsListComponent },
   { path: 'add', component: AddCarComponent },
   { path: 'reservations', component: CreateReservationComponent },

@@ -1,6 +1,6 @@
 <div>
   <nav class="navbar navbar-expand navbar-dark bg-dark px-3">
-    <a href="#" class="navbar-brand">Car Web Service</a>
+    <a routerLink="" class="navbar-brand">Car Web Service</a>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
         <a routerLink="cars" class="nav-link">Car fleet</a>
@@ -17,13 +17,22 @@
         </li>
       </div>
     </ul>
-      <ul class="navbar-nav ml-auto">
+    <ul class="navbar-nav ml-auto">
+      <div *ngIf="isLogged; else loggedIn">
         <li class="nav-item">
-            <a routerLink="login" class="nav-link">{{ loginToogle }}</a>
+          <a routerLink="login" class="nav-link" (click)="isLogged = false">Logout</a>
         </li>
-        <li class="nav-item">
-            <a routerLink="contact" class="nav-link">Contact</a>
-        </li>
+      </div>
+      <ng-template #loggedIn>
+        <div>
+          <li class="nav-item">
+            <a routerLink="login" class="nav-link">Login</a>
+          </li>
+        </div>
+      </ng-template>
+      <li class="nav-item">
+        <a routerLink="contact" class="nav-link">Contact</a>
+      </li>
     </ul>
   </nav>
   <div class="container mt-3">
