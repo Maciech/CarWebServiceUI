@@ -8,12 +8,18 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LoginService {
 
-  private apiCarsServerUrl = 'http://localhost:8080/api/users';
+  private apiUsersServerUrl = 'http://localhost:8080/api/users';
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient
+    ) { }
 
-  public getUserByLogin(login: string): Observable<User> {
-    return this.http.get<User>(`${this.apiCarsServerUrl}/getUser/${login}`);
+  public getUserById(userId: number): Observable<User> {
+    return this.http.get<User>(`${this.apiUsersServerUrl}/getUserById/${userId}`);
+  }
+
+  public getUserByModel(user: User): Observable<User> {
+    return this.http.post<User>(`${this.apiUsersServerUrl}/getUserByModel`, user);
   }
 
 }

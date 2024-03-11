@@ -1,0 +1,5 @@
+.container {
+    margin: 30%; /* This will horizontally center the container */
+    max-width: 1000px; /* Adjust the maximum width as needed */
+}
+
